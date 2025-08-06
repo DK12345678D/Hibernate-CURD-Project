@@ -26,5 +26,24 @@ A simple Java-based CRUD (Create, Read, Update, Delete) application using **Hibe
 
 ---
 
-## 📁 Project Structure
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/hibernate-crud.git
+cd hibernate-crud
+```
+## 🧪 How to Test
+Run App.java or use a JUnit test class
+
+Each operation is logged via console output or Log4j
+
+## 📚 Learning Resources
+Hibernate Documentation
+
+Baeldung – Hibernate Guide
 
