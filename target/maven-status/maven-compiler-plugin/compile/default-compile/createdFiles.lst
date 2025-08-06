@@ -1,0 +1,6 @@
+com\app\dao\impl\StudentDaoImpl.class
+com\app\servlet\StudentInsertServlet.class
+com\app\model\student\Student.class
+com\app\util\HibernateUtil.class
+com\app\dao\IStudentDao.class
+com\app\servlet\StudentDataServlet.class
