@@ -46,4 +46,8 @@ Each operation is logged via console output or Log4j
 Hibernate Documentation
 
 Baeldung – Hibernate Guide
+---
 
+👨‍💻 **Author:** Dinkar Prasad  
+📧 Email: dinkarprasad682@gmail.com  
+🔗 [LinkedIn](https://linkedin.com/in/dinkarprasad682)
