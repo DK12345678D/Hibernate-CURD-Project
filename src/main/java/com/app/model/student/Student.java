@@ -1,5 +1,4 @@
 package com.app.model.student;
-import javax.persistence.Column; 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;

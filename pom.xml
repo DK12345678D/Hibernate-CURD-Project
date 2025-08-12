@@ -7,9 +7,9 @@
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<properties>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
-	</properties>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+</properties>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
 		<dependency>
@@ -27,7 +27,7 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>5.6.15.Final</version>
+			<version>6.4.4.Final</version>
 		</dependency>
 
 		<!-- MySQL JDBC Driver -->
@@ -43,11 +43,6 @@
 			<artifactId>jakarta.servlet-api</artifactId>
 			<version>5.0.0</version>
 			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>jakarta.persistence</groupId>
-			<artifactId>jakarta.persistence-api</artifactId>
-			<version>2.2.3</version>
 		</dependency>
 	</dependencies>
 	<build>

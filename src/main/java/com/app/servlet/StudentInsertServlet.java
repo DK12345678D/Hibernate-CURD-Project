@@ -14,45 +14,62 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/insertStud")
 public class StudentInsertServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Override
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		try {
-			// 1. Read data from index.jsp
-			String sid = request.getParameter("sid");
-			String stdName = request.getParameter("sname");
-			String sfee = request.getParameter("sfee");
-			String sage = request.getParameter("age");
-			String smob = request.getParameter("mob");
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException {
+        
+        String message;
 
-			// 2. Parse the data
-			Integer stdId = Integer.parseInt(sid);
-			double stdFee = Double.parseDouble(sfee);
-			Integer age = Integer.parseInt(sage);
-			long mob = Long.parseLong(smob); // ✅ CORRECT TYPE
+        try {
+            // 1. Read form parameters
+            String sid = request.getParameter("sid");
+            String stdName = request.getParameter("sname");
+            String sfee = request.getParameter("sfee");
+            String sage = request.getParameter("age");
+            String smob = request.getParameter("mob");
 
-			// 3. Create and populate Student object
-			Student st = new Student();
-			st.setStdId(stdId);
-			st.setStdName(stdName);
-			st.setStdFee(stdFee);
-			st.setAge(age);
-			st.setMob(mob);
+            // 2. Validate inputs (basic check)
+            if (sid == null || stdName == null || sfee == null || sage == null || smob == null ||
+                sid.isEmpty() || stdName.isEmpty() || sfee.isEmpty() || sage.isEmpty() || smob.isEmpty()) {
+                throw new IllegalArgumentException("All fields are required!");
+            }
 
-			// 4. Save using DAO
-			IStudentDao dao = new StudentDaoImpl();
-			int resStd = dao.saveStudent(st);
+            // 3. Parse values
+            Integer stdId = Integer.parseInt(sid);
+            double stdFee = Double.parseDouble(sfee);
+            Integer age = Integer.parseInt(sage);
+            long mob = Long.parseLong(smob);
 
-			// 5. Final message
-			//String msg = ;
-			request.setAttribute("message", "Student '" + resStd + "' created successfully!");
-		} catch (Exception e) {
-			e.printStackTrace();
-			request.setAttribute("message", "Error: " + e.getMessage());
-		}
+            // 4. Create Student object
+            Student st = new Student();
+            st.setStdId(stdId);
+            st.setStdName(stdName);
+            st.setStdFee(stdFee);
+            st.setAge(age);
+            st.setMob(mob);
 
-		// 6. Forward to index.jsp
-		request.getRequestDispatcher("index.jsp").forward(request, response);
-	}
+            // 5. Save using DAO
+            IStudentDao dao = new StudentDaoImpl();
+            int rowsAffected = dao.saveStudent(st);
+
+            if (rowsAffected > 0) {
+                message = "✅ Student '" + stdName + "' created successfully!";
+            } else {
+                message = "⚠️ Failed to create student.";
+            }
+
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            message = "❌ Invalid number format: " + e.getMessage();
+        } catch (Exception e) {
+            e.printStackTrace();
+            message = "❌ Error: " + e.getMessage();
+        }
+
+        // 6. Send message back to JSP
+        request.setAttribute("message", message);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
+    }
 }
