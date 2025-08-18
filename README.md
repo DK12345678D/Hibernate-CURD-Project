@@ -1,4 +1,4 @@
-# Hibernate CRUD Application with MySQL
+## Hibernate CRUD Application with MySQL
 
 This is a simple Java-based CRUD (Create, Read, Update, Delete) application built using **Hibernate ORM** with **MySQL** as the backend database.  
 It demonstrates how to perform basic database operations (insert, fetch, update, delete) using Hibernate with proper configurations and JPA annotations.
