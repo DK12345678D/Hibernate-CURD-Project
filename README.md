@@ -24,11 +24,11 @@ It demonstrates how to perform basic database operations (insert, fetch, update,
 
 ---
 ## 📸 Screenshot
-Here’s an example of the output:
+Insert Data and Save:
 
-![Hibernate CRUD Output](images/output.png)
-
-*(Place your screenshot in a folder named `images` inside the project root, and name it `output.png` or update the path accordingly.)*
+![Hibernate CRUD Output](src/main/webapp/images/student.png)
+All Data :
+![Hibernate CRUD Output](src/main/webapp/images/studentall.png)
 
 ---
 
