@@ -7,7 +7,7 @@ It demonstrates how to perform basic database operations (insert, fetch, update,
 
 ## 📌 Features  
 - ✍️ Create a new record in the database  
-- 📖 Read (retrieve) records  
+- 📖 Read (retrieve) records   
 - ✏️ Update existing records  
 - ❌ Delete records  
 - 🔗 Uses Hibernate ORM for mapping Java objects to database tables  
