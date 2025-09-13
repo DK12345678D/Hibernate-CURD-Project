@@ -5,7 +5,7 @@ It demonstrates how to perform basic database operations (insert, fetch, update,
 
 ---    
 
-## 📌 Features 
+## 📌 Features  
 - ✍️ Create a new record in the database  
 - 📖 Read (retrieve) records  
 - ✏️ Update existing records  
