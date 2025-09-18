@@ -4,7 +4,7 @@ This is a simple Java-based CRUD (Create, Read, Update, Delete) application buil
 It demonstrates how to perform basic database operations (insert, fetch, update, delete) using Hibernate with proper configurations and JPA annotations.
 
 ---    
-
+ 
 ## 📌 Features  
 - ✍️ Create a new record in the database  
 - 📖 Read (retrieve) records   
