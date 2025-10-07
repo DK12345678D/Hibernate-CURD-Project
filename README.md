@@ -13,7 +13,7 @@ It demonstrates how to perform basic database operations (insert, fetch, update,
 - 🔗 Uses Hibernate ORM for mapping Java objects to database tables  
 - 🗄️ MySQL as the backend database  
 
----
+---   
 
 ## 🛠️ Technologies Used
 - ☕ **Java 17**  
